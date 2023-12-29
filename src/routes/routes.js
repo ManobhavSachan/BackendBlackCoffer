@@ -16,7 +16,7 @@ async function startServer(app, port) {
     const db = client.db("BlackCoffer");
     const collection = db.collection("SampleData");
 
-    app.get("/api/data", express.json(), async (req, res) => {
+    app.post("/api/data", express.json(), async (req, res) => {
       try {
         // Extract filter parameters from the request
         const {
@@ -55,7 +55,7 @@ async function startServer(app, port) {
     });
 
     // Endpoint to get all distinct values for filters
-    app.post("/api/filters", async (req, res) => {
+    app.get("/api/filters", express.json(), async (req, res) => {
       try {
         const distinctFilters = await Promise.all([
           collection.distinct("end_year"),
