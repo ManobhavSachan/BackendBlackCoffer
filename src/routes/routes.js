@@ -34,11 +34,11 @@ async function startServer(app, port) {
         // Build your filter object based on the provided parameters
         const filter = {};
 
-        if (endYear) filter.endYear = endYear;
-        if (topics) filter.topics = topics;
+        if (endYear) filter.end_year = endYear;
+        if (topics) filter.topic = topics;
         if (sector) filter.sector = sector;
         if (region) filter.region = region;
-        if (pest) filter.pest = pest;
+        if (pest) filter.pestle = pest;
         if (source) filter.source = source;
         if (swot) filter.swot = swot;
         if (country) filter.country = country;
